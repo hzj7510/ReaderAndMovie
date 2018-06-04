@@ -1,0 +1,19 @@
+<view class='detail-view'>
+  <image class='title-image' src='{{imgSrc}}'></image>
+  <image class='music-image' src='{{isplaymusic?"/images/music/music-stop.png": "/images/music/music-start.png"}}' catchtap='musicTap'></image>
+  <view class='author-view'>
+    <image class='author-avatar' src='{{avatar}}'></image>
+    <text class='author-name'>{{author}}</text>
+    <text>发表于</text>
+    <text class='public-time'>{{dateTime}}</text>
+  </view>
+  <text class='title'>{{title}}</text>
+  <view>
+    <view class='collection-share-view'>
+      <image src='{{iscollected?"/images/icon/collection.png":"/images/icon/collection-anti.png"}}' catchtap='collectionTap'></image>
+      <image class='share-image' src='{{isshared?"/images/icon/share.png":"/images/icon/share-anti.png"}}' catchtap='shareTap'></image>
+    </view>
+    <view class='horizon'></view>
+  </view>
+  <text class='detail'>{{detail}}</text>
+</view>
