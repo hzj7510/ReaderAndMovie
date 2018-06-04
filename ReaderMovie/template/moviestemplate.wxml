@@ -1,8 +1,8 @@
-<import src="starttemplate.wxml"/>
+<import src="starstemplate.wxml"/>
 
-<template>
+<template name="moviestemplate">
   <view>
-    <image src=''></image>
+    <image src='/images/fulian.webp'></image>
     <text>shenqidongwuzainali</text>
     <template is='starstemplate'/>
   </view>
