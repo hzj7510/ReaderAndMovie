@@ -1,0 +1,41 @@
+page{
+  background-color: #b3d4db;
+  height: 100%;
+}
+
+.container{
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+
+.user-avator{
+  height: 200rpx;
+  width: 200rpx;
+  margin-top: 160rpx;
+  border-radius: 100rpx;
+}
+
+.user-name{
+  font-size: 44rpx;
+  font-weight: bold;
+  margin-top: 100rpx;
+}
+
+.content-view{
+  margin-top: 100rpx;
+  height: 80rpx;
+  width: 200rpx;
+  text-align: center;
+  border: 1px solid #405f80;
+  border-radius: 5rpx;
+
+}
+
+.content-text{
+  font-size: 22rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  color: #405f80;
+}
