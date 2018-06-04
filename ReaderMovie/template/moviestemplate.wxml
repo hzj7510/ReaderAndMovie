@@ -1,9 +1,9 @@
 <import src="starstemplate.wxml"/>
 
 <template name="moviestemplate">
-  <view>
-    <image src='/images/fulian.webp'></image>
-    <text>shenqidongwuzainali</text>
+  <view class='movie-container'>
+    <image class='movie-img' src='/images/fulian.webp'></image>
+    <text class='movie-text'>神器的动物在哪里</text>
     <template is='starstemplate'/>
   </view>
 </template>
