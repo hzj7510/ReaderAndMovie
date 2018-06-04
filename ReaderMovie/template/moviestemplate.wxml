@@ -1,0 +1,9 @@
+<import src="starttemplate.wxml"/>
+
+<template>
+  <view>
+    <image src=''></image>
+    <text>shenqidongwuzainali</text>
+    <template is='starstemplate'/>
+  </view>
+</template>
