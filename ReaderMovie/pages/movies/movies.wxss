@@ -1,2 +1,10 @@
-@import "../../template/movielisttemplate.wxss"
+@import "../../template/movielisttemplate.wxss";
+
+.container{
+  background-color: #f2f2f2;
+}
+
+.container view{
+  margin-bottom: 30rpx;
+}
 

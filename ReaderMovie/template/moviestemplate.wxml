@@ -2,8 +2,8 @@
 
 <template name="moviestemplate">
   <view class='movie-container'>
-    <image class='movie-img' src='/images/fulian.webp'></image>
-    <text class='movie-text'>神器的动物在哪里</text>
-    <template is='starstemplate'/>
+    <image class='movie-img' src='{{largeimgurl}}'></image>
+    <text class='movie-text'>{{title}}</text>
+    <template is='starstemplate' data="{{stars: stars, score: average}}"/>
   </view>
 </template>

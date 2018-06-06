@@ -1,7 +1,13 @@
 <import src="../../template/movielisttemplate.wxml" />
 
 <view class='container'>
-  <template is="movielisttemplate" />
-  <template is="movielisttemplate" />
-  <template is="movielisttemplate" />
+  <view>
+    <template is="movielisttemplate" data="{{...inTheaters}}"/>
+  </view>
+  <view>
+    <template is="movielisttemplate" data="{{...comingsoon}}"/>
+  </view>
+  <view>
+    <template is="movielisttemplate" data="{{...top250}}"/>
+  </view>
 </view>

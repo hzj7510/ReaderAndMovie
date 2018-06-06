@@ -1,3 +1,6 @@
+var app = getApp();
+var tools = require('../../tools/tools.js')
+
 // pages/movies/movies.js
 Page({
 
@@ -5,62 +8,59 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    // inTheaters:{},
+    // comingsoon:{},
+    // top250:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
-  },
+    var inTheaters = app.globalData.doubanBase + "/v2/movie/in_theaters" + "?start=0&count=3";
+    var comingsoon = app.globalData.doubanBase + "/v2/movie/coming_soon" + "?start=0&count=3";
+    var top250 = app.globalData.doubanBase + "/v2/movie/top250" + "?start=0&count=3";
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+    this.getMovieListData(inTheaters, 'inTheaters', '正在热映');
+    this.getMovieListData(comingsoon, 'comingsoon', '即将上映');
+    this.getMovieListData(top250, 'top250', '豆瓣Top250');
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
   
+  getMovieListData: function (url, tp, categorytitle){
+    var that = this;
+    tools.http(url, 'GET', function(data){
+      that.processdata(data, tp, categorytitle);
+    });
   },
+  processdata: function (dt, tp, categorytitle){
+    var moviedata = [];
+    for(var index in dt.subjects){
+      var subject = dt.subjects[index];
+      var title= subject.title;
+      if(title.length>=6){
+        title = title.substring(0, 6) + "...";
+      }
+      var temp = {
+        stars: tools.convertToStarsArray(subject.rating.stars),
+        title: title,
+        average: subject.rating.average,
+        largeimgurl: subject.images.large,
+        movieid: subject.id,
+      }
+      moviedata.push(temp);
+    }
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
+    var readyData = {};
+    readyData[tp] = {
+      categorytitle: categorytitle,
+      moviedata:moviedata
+    };
+    this.setData(readyData);
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  moreTap:function(event){
+    var cate = event.currentTarget.dataset.cate;
+    wx.navigateTo({
+      url: '/pages/moviemore/moviemore?cate=' + cate,
+    });
   }
 })
