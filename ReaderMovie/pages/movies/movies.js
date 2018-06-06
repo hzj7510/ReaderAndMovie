@@ -11,6 +11,8 @@ Page({
     // inTheaters:{},
     // comingsoon:{},
     // top250:{}
+    containershow: true,
+    searchpanelshow:false,
   },
 
   /**
@@ -62,5 +64,17 @@ Page({
     wx.navigateTo({
       url: '/pages/moviemore/moviemore?cate=' + cate,
     });
-  }
+  },
+  onbindfocus:function(event){
+    this.setData({
+      containershow :false,
+      searchpanelshow : true,
+    });
+  },
+  oncancelimgtap:function(event){
+    this.setData({
+      containershow: true,
+      searchpanelshow: false,
+    });
+  },
 })
