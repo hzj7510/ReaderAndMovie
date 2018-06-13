@@ -1,4 +1,5 @@
 @import "../../template/movielisttemplate.wxss";
+@import "../../template/moviegridtemplate.wxss";
 
 .container{
   background-color: #f2f2f2;

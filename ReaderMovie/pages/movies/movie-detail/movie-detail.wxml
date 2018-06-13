@@ -1,0 +1,13 @@
+<view class='container'>
+  <image class='head-img' src='/images/post/bl.png' mode='scaleToFill' />
+  <view class='head-img-hover' data-src='比利·林恩' catchtap='viewMoviePostImg'>
+    <text class='main-title'>比利·林恩</text>
+    <text class='sub-title'>美国加利福尼亚·2016</text>
+    <view class='like'>
+      <text class='highlight-font'>9999</text>
+      <text class='plain-font'>人喜欢</text>
+      <text class='highlight-font'>9999</text>
+      <text class='plain-font'>条评论</text>
+    </view>
+  </view>
+</view>

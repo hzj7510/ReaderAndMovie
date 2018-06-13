@@ -1,7 +1,7 @@
 <import src="starstemplate.wxml"/>
 
 <template name="moviestemplate">
-  <view class='movie-container'>
+  <view class='movie-container' catchtap='onMovieDetailTap' data-movieId='{{movieid}}'>
     <image class='movie-img' src='{{largeimgurl}}'></image>
     <text class='movie-text'>{{title}}</text>
     <template is='starstemplate' data="{{stars: stars, score: average}}"/>

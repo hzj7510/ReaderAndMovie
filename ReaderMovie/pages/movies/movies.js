@@ -77,4 +77,15 @@ Page({
       searchpanelshow: false,
     });
   },
+  onbindchange:function(event){
+    var text = event.detail.value;
+    var searchurl = app.globalData.doubanBase + '/v2/movie/search?q=' + text;
+    this.getMovieListData(searchurl, 'searchResult', '');
+  },
+  onMovieDetailTap:function(event){
+    var movieid = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: '/pages/movies/movie-detail/movie-detail?movieid=' + movieid,
+    });
+  }
 })
